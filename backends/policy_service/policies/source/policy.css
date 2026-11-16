@@ -1,0 +1,155 @@
+/* Shared print stylesheet for ReverieEscapes policy documents (rendered to PDF by build-pdfs.sh). */
+
+@page {
+  size: A4;
+  margin: 22mm 20mm 24mm 20mm;
+  @bottom-right {
+    content: "Page " counter(page) " of " counter(pages);
+    font: 7.5pt "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+    color: #6b6457;
+  }
+}
+
+:root {
+  --ink: #1b2236;
+  --muted: #6b6457;
+  --gold: #a5824c;
+  --line: #ddd4c4;
+  --ivory: #faf7f1;
+  --season: #7a3e2b;
+  --season-bg: #f6ebe3;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+body {
+  margin: 0;
+  color: var(--ink);
+  font: 9.6pt/1.5 "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+}
+
+body.lang-ja {
+  font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  line-height: 1.7;
+}
+
+/* Letterhead */
+.letterhead {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 1.5pt solid var(--ink);
+  padding-bottom: 8pt;
+  margin-bottom: 14pt;
+}
+.brand { line-height: 1.1; }
+.brand .mark {
+  font: 600 20pt "Didot", "Bodoni 72", "Iowan Old Style", Georgia, serif;
+  letter-spacing: .5pt;
+}
+.brand .mark em { font-style: normal; color: var(--gold); }
+.brand .sub {
+  font-size: 7pt;
+  letter-spacing: 2.4pt;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.classification {
+  font-size: 7pt;
+  letter-spacing: 1pt;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-align: right;
+}
+
+h1 {
+  font: 600 17pt/1.25 "Iowan Old Style", "Palatino", Georgia, serif;
+  margin: 0 0 4pt;
+}
+body.lang-ja h1, body.lang-ja h2 { font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; }
+.subtitle { color: var(--muted); margin: 0 0 12pt; font-size: 9.5pt; }
+
+/* Document control block */
+table.control {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 14pt;
+  font-size: 8.3pt;
+  background: var(--ivory);
+}
+table.control th, table.control td {
+  border: .6pt solid var(--line);
+  padding: 4pt 7pt;
+  text-align: left;
+  vertical-align: top;
+}
+table.control th {
+  width: 22%;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+/* Seasonal banner */
+.season {
+  border: 1pt solid var(--season);
+  background: var(--season-bg);
+  color: var(--season);
+  padding: 7pt 10pt;
+  margin: 0 0 14pt;
+  font-size: 9pt;
+}
+.season strong { letter-spacing: 1pt; text-transform: uppercase; }
+
+h2 {
+  font: 600 11.5pt/1.3 "Iowan Old Style", "Palatino", Georgia, serif;
+  margin: 16pt 0 6pt;
+  padding-bottom: 3pt;
+  border-bottom: .6pt solid var(--line);
+  break-after: avoid;
+}
+
+p { margin: 0 0 7pt; }
+
+p.clause { padding-left: 0; }
+.cid {
+  font-weight: 700;
+  color: var(--ink);
+  margin-right: 4pt;
+  white-space: nowrap;
+}
+
+ul { margin: 0 0 7pt 14pt; padding: 0; }
+li { margin-bottom: 3pt; }
+
+table.data {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 4pt 0 10pt;
+  font-size: 8.6pt;
+  break-inside: avoid;
+}
+table.data th, table.data td {
+  border-bottom: .6pt solid var(--line);
+  padding: 3.5pt 6pt;
+  text-align: left;
+}
+table.data th { color: var(--muted); font-weight: 600; border-bottom: 1pt solid var(--ink); }
+table.data td.num, table.data th.num { text-align: right; }
+
+.note {
+  font-size: 8.4pt;
+  color: var(--muted);
+  border-left: 2pt solid var(--gold);
+  padding: 2pt 0 2pt 8pt;
+  margin: 8pt 0;
+}
+
+.signoff {
+  margin-top: 18pt;
+  padding-top: 8pt;
+  border-top: .6pt solid var(--line);
+  font-size: 8.4pt;
+  color: var(--muted);
+}
