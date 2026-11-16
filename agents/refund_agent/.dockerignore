@@ -1,0 +1,5 @@
+# Generated for Microsoft Foundry by the Ballerina extension and rewritten on each build. Delete this line to keep your edits.
+*
+!target/bin/refund_agent.jar
+!start.sh
+!otel/
