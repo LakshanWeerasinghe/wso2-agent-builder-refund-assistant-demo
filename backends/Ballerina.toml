@@ -1,0 +1,3 @@
+[workspace]
+title = "ReverieEscapes Backends"
+packages = ["guest_mcp_server", "policy_service", "refund_api"]
