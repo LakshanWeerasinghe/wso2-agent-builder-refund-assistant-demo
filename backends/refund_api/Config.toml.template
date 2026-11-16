@@ -1,0 +1,21 @@
+# Optional: the defaults below match the local demo setup. Copy to Config.toml to change them.
+
+port = 8080
+
+# The refund agent. Locally: http://localhost:8088 and /invocations. For an agent deployed to
+# Microsoft Foundry, use the agent's invocations endpoint and a Microsoft Entra access token.
+agentUrl = "http://localhost:8088"
+agentInvocationsPath = "/invocations"
+# agentAccessToken = "<ACCESS_TOKEN>"
+# Foundry starts a sandbox per session ID. Leave empty for one session per case, or set a fixed value
+# such as "refund-api" to reuse one warm sandbox (avoids a cold start on every new case).
+# agentSessionId = "refund-api"
+
+# Mock reservation and loyalty systems (guest-mcp-server REST API).
+guestApiUrl = "http://localhost:9090/api"
+
+# Policy register and PDF hosting.
+policyServiceUrl = "http://localhost:8090"
+
+# Base URL of the portal; guest share links point at {portalUrl}/guest.html?token=...
+portalUrl = "http://localhost:8000"
