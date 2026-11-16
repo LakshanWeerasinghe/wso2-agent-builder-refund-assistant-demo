@@ -1,0 +1,16 @@
+# Ballerina
+target/
+Ballerina.lock
+Dependencies.toml
+
+# Local configuration with secrets
+Config.toml
+
+# Policy service ingestion state
+backends/policy_service/policies/.index-state.json
+
+.DS_Store
+
+# Deployment working files (contain resource URLs)
+agent-v*.json
+policy-service.yaml
