@@ -1,0 +1,27 @@
+# Copy to Config.toml and fill in. Config.toml is git-ignored; never commit it or bake it into an image.
+# In a container (for example a Foundry hosted agent), pass the same values as BAL_CONFIG_VAR_<NAME>
+# environment variables instead, e.g. BAL_CONFIG_VAR_OPENAIAPIKEY.
+
+# Azure OpenAI.
+# Legacy URL: https://<resource>.openai.azure.com/openai (needs openAiApiVersion)
+# v1 URL:     https://<resource>.services.ai.azure.com/openai/v1 (openAiApiVersion is ignored)
+openAiServiceUrl = "https://<resource>.openai.azure.com/openai"
+openAiApiKey = "<AZURE_OPENAI_API_KEY>"
+chatDeploymentId = "<CHAT_MODEL_DEPLOYMENT>"
+# Must be the embedding deployment the policy-service used to build the index.
+embeddingDeploymentId = "<EMBEDDING_MODEL_DEPLOYMENT>"
+openAiApiVersion = "2024-10-21"
+
+# Azure AI Search index built by the policy-service. Use an ADMIN key: azure:AiSearchKnowledgeBase reads the
+# index definition when it is created, which a query key may not do (403).
+searchServiceUrl = "https://<search-service>.search.windows.net"
+searchApiKey = "<AZURE_AI_SEARCH_ADMIN_KEY>"
+searchIndexName = "reverie-policies"
+
+# Local services.
+guestMcpUrl = "http://localhost:9090/mcp"
+guestApiUrl = "http://localhost:9090/api"
+policyServiceUrl = "http://localhost:8090"
+
+# Policy passages retrieved per scope level (hotel, country, region, global) on each search.
+passagesPerScope = 3

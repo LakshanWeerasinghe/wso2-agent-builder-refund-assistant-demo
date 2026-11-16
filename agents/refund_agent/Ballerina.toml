@@ -1,0 +1,10 @@
+[package]
+org = "reverie_escapes"
+name = "refund_agent"
+version = "0.1.0"
+distribution = "2201.14.1"
+title = "Refund Agent"
+
+[build-options]
+observabilityIncluded = true
+sticky = true
