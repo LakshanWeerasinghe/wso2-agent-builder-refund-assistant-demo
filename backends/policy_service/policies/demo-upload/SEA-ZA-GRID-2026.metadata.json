@@ -1,0 +1,17 @@
+{
+  "documentId": "SEA-ZA-GRID-2026",
+  "title": "South Africa Grid Emergency Compensation Protocol",
+  "titleEnglish": "South Africa Grid Emergency Compensation Protocol",
+  "summary": "Emergency South African rules raising grid-interruption compensation to 40% per night, retroactive for decisions from 14 November 2026, with doubled Gold and Platinum points.",
+  "version": "1.0",
+  "language": "en",
+  "scope": "COUNTRY",
+  "region": "AFRICA",
+  "countryCode": "ZA",
+  "hotelId": null,
+  "policyType": "SEASONAL",
+  "effectiveFrom": "2026-10-01",
+  "effectiveTo": "2026-12-31",
+  "clausePrefix": "ZAG",
+  "owner": "Africa Regional Operations"
+}
