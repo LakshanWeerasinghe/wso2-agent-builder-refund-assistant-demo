@@ -1,0 +1,9 @@
+[package]
+org = "reverie_escapes"
+name = "policy_service"
+version = "0.1.0"
+distribution = "2201.14.1"
+title = "Policy Service"
+
+[build-options]
+sticky = true

@@ -1,0 +1,26 @@
+# Copy to Config.toml and fill in. Config.toml is git-ignored; never commit it.
+# With the Azure settings left empty the service still serves the register, PDFs and chunk previews;
+# only the ingestion endpoints answer 503.
+
+port = 8090
+# Folder with register.json and the PDFs, relative to where the service is started.
+policiesDir = "policies"
+
+# Azure OpenAI embeddings.
+# Legacy URL: https://<resource>.openai.azure.com/openai (needs openAiApiVersion)
+# v1 URL:     https://<resource>.services.ai.azure.com/openai/v1 (openAiApiVersion is ignored)
+openAiServiceUrl = "https://<resource>.openai.azure.com/openai"
+openAiApiKey = "<AZURE_OPENAI_API_KEY>"
+embeddingDeploymentId = "<EMBEDDING_MODEL_DEPLOYMENT>"
+openAiApiVersion = "2024-10-21"
+# Must match the embedding model (text-embedding-3-small: 1536, text-embedding-3-large: 3072).
+embeddingDimensions = 1536
+
+# Azure AI Search. An ADMIN key: the service creates the index and writes documents.
+searchServiceUrl = "https://<search-service>.search.windows.net"
+searchAdminKey = "<AZURE_AI_SEARCH_ADMIN_KEY>"
+searchIndexName = "reverie-policies"
+
+# Chunking
+maxChunkChars = 1200
+chunkOverlapChars = 150
